@@ -1,13 +1,13 @@
 ﻿@model MVCReviewSite.Models.Category
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Category Details";
 }
 
-<h2>Details</h2>
+<h3>Category Details</h3>
 
+@* Administrator may view the details of a Property Category *@
 <div>
-    <h4>Category</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,7 +20,8 @@
 
     </dl>
 </div>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryID }) |
+    @Html.ActionLink("Edit This Category", "Edit", new { id = Model.CategoryID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

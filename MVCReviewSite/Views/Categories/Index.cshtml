@@ -4,18 +4,15 @@
     ViewBag.Title = "Property Categories";
 }
 
-<h2>Index</h2>
+<h2>Property Categories</h2>
 
+@* Administrator may view the list of Property Categories, and create new categories.
+Administrator should create a set of Property Categories before any users may create Reviews. *@
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Category", "Create")
 </p>
+
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </th>
-        <th></th>
-    </tr>
 
 @foreach (var item in Model) {
     <tr>

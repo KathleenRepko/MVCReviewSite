@@ -14,9 +14,9 @@ namespace MVCReviewSite.Models
         public int ReviewID { get; set; }
         [MaxLength(40), Display(Name ="Review Title")]
         public string Title { get; set; }
-        [Display(Name ="Name of Property")]
+        [Display(Name ="Property Name")]
         public string PropertyName { get; set; }
-        [Display(Name ="Location of Property (City/State/Country)")]
+        [Display(Name ="Property Location")]
         public string PropertyLocation { get; set; }
         [Display(Name ="Reviewer Name")]
         public string Reviewer { get; set; }

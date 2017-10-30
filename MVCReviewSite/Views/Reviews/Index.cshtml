@@ -4,66 +4,32 @@
     ViewBag.Title = "Reviews";
 }
 
-<h2>Index</h2>
+<h2>Reviews</h2>
 
+@* Review Index page gives user (a) opportunity to view list of reviews, and (b) the option of creating new review *@
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Review", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PropertyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PropertyLocation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Reviewer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.CategoryName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PropertyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PropertyLocation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Reviewer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReviewID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReviewID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReviewID })
-        </td>
-    </tr>
-}
+@* A thumbnail representing each review will appear on Reviews Index page *@
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <div class="title">
+                        <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                    </div>
+                    <h4>@Html.DisplayFor(modelItem => item.PropertyName)</h4>
+                    <h5>@Html.DisplayFor(modelItem => item.PropertyLocation)</h5>
+                    <p>@Html.ActionLink("Details", "Details", new { id = item.ReviewID }, new { @class = "btn btn-primary", role = "button" })</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
 
-</table>
+
+
+

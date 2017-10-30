@@ -11,7 +11,7 @@ namespace MVCReviewSite.Models
         //Web application administrator should establish a list of property types (Hotel, Restaurant, Attraction, etc.)
         [Key]
         public int CategoryID { get; set; }
-        [Display(Name ="Property Category (hotel, restaurant...")]
+        [Display(Name ="Property Category")]
         public string CategoryName { get; set; }
 
         public virtual ICollection<Review> Review { get; set; }
